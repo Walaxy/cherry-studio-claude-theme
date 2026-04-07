@@ -1,0 +1,239 @@
+/**
+ * Cherry Studio — Claude 官方配色（自定义 CSS）
+ *
+ * 配色来源：Claude Official.css 中 [data-theme=claude] 浅色/深色令牌（约 180–281 行）
+ * 与 .hljs 代码色（约 100–103 行，One Dark）。
+ * 文档：https://docs.cherry-ai.com/pre-basic/personalization-settings/css
+ * 变量参考：https://github.com/CherryHQ/cherry-studio/blob/main/src/renderer/src/assets/styles/color.css
+ *
+ * 可选：取消下方「Anthropic 字体」注释块以使用 Claude 网页同款字体（需联网加载字体文件）。
+ */
+
+/* 可选：取消注释以下 @font-face 与 :root 规则以使用 Anthropic Sans（与 Claude Official.css 同源，需联网加载） */
+
+@font-face {
+  font-family: Anthropic Sans;
+  src: url(https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc27851ad-CFxw3nG7.woff2) format("woff2");
+  font-weight: 300 800;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  font-family: "Anthropic Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+
+/* ========== 浅色（Claude light tokens）========== */
+body[theme-mode="light"] {
+  --color-white: #ffffff;
+  --color-white-soft: rgba(20, 20, 19, 0.04);
+  --color-white-mute: #f0eee6;
+
+  --color-black: #141413;
+  --color-black-soft: #3d3d3a;
+  --color-black-mute: #73726c;
+
+  --color-gray-1: #73726c;
+  --color-gray-2: #5c5a54;
+  --color-gray-3: #3d3d3a;
+
+  --color-text-1: rgba(20, 20, 19, 0.95);
+  --color-text-2: rgba(61, 61, 58, 0.75);
+  --color-text-3: rgba(115, 114, 108, 0.45);
+
+  --color-background: #faf9f5;
+  --color-background-soft: #f5f4ed;
+  --color-background-mute: #f0eee6;
+  --color-background-opacity: rgba(250, 249, 245, 0.92);
+  --inner-glow-opacity: 0.12;
+
+  --color-primary: #d97757;
+  --color-primary-soft: #d9775799;
+  --color-primary-mute: #d9775733;
+
+  --color-text: var(--color-text-1);
+  --color-text-secondary: rgba(61, 61, 58, 0.72);
+  --color-icon: rgba(20, 20, 19, 0.55);
+  --color-icon-white: #141413;
+
+  --color-border: rgba(31, 30, 29, 0.14);
+  --color-border-soft: rgba(31, 30, 29, 0.08);
+  --color-border-mute: rgba(31, 30, 29, 0.04);
+
+  --color-error: #b53333;
+  --color-link: #2c84db;
+
+  --color-code-background: #282c34;
+  --color-inline-code-background: rgba(31, 30, 29, 0.06);
+  --color-inline-code-text: #b53333;
+
+  --color-hover: #f0eee6;
+  --color-active: #e8e6dc;
+  --color-frame-border: rgba(31, 30, 29, 0.12);
+  --color-group-background: #faf9f5;
+
+  --color-reference: #e8e6dc;
+  --color-reference-text: #141413;
+  --color-reference-background: #f5f4ed;
+
+  --color-list-item: #ffffff;
+  --color-list-item-hover: #f5f4ed;
+
+  --modal-background: #faf9f5;
+
+  --color-highlight: rgba(0, 0, 0, 0.85);
+  --color-background-highlight: rgba(255, 200, 120, 0.45);
+  --color-background-highlight-accent: rgba(217, 119, 87, 0.35);
+
+  --navbar-background-mac: rgba(250, 249, 245, 0.72);
+  --navbar-background: #faf9f5;
+
+  --chat-background: transparent;
+  /* Claude 浅色用户气泡：bg-300，与官网一致勿用半透明（叠底会偏成 #F1EFE6） */
+  --chat-background-user: #f0eee6;
+  --chat-background-assistant: transparent;
+  --chat-text-user: #141413;
+
+  --color-status-success: #2f7613;
+  --color-status-error: var(--color-error);
+  --color-status-warning: #875a08;
+}
+
+body[theme-mode="light"] #content-container {
+  background-color: var(--color-background) !important;
+}
+
+body[theme-mode="light"] #content-container #messages {
+  background-color: var(--color-background);
+}
+
+body[theme-mode="light"] .inputbar-container {
+  background-color: #ffffff;
+  border: 1px solid rgba(31, 30, 29, 0.12);
+  border-radius: 8px;
+}
+
+body[theme-mode="light"] code {
+  background-color: var(--color-inline-code-background);
+  color: var(--color-inline-code-text);
+}
+
+body[theme-mode="light"] pre code {
+  color: #abb2bf;
+  background-color: #282c34;
+}
+
+/* ========== 深色（Claude dark tokens + One Dark 代码块）========== */
+body[theme-mode="dark"] {
+  --color-white: #faf9f5;
+  --color-white-soft: rgba(250, 249, 245, 0.08);
+  --color-white-mute: rgba(250, 249, 245, 0.14);
+
+  --color-black: #141413;
+  --color-black-soft: #30302e;
+  --color-black-mute: #262624;
+
+  --color-gray-1: #9c9a92;
+  --color-gray-2: #c2c0b6;
+  --color-gray-3: #dedcd1;
+
+  --color-text-1: rgba(250, 249, 245, 0.94);
+  --color-text-2: rgba(194, 192, 182, 0.72);
+  --color-text-3: rgba(156, 154, 146, 0.45);
+
+  --color-background: #30302e;
+  --color-background-soft: #262624;
+  --color-background-mute: #1f1e1d;
+  --color-background-opacity: rgba(48, 48, 46, 0.85);
+  --inner-glow-opacity: 0.28;
+
+  --color-primary: #d97757;
+  --color-primary-soft: #d9775799;
+  --color-primary-mute: #d9775733;
+
+  --color-text: var(--color-text-1);
+  --color-text-secondary: rgba(194, 192, 182, 0.75);
+  --color-icon: rgba(250, 249, 245, 0.55);
+  --color-icon-white: #faf9f5;
+
+  --color-border: rgba(222, 220, 209, 0.18);
+  --color-border-soft: rgba(222, 220, 209, 0.1);
+  --color-border-mute: rgba(222, 220, 209, 0.06);
+
+  --color-error: #dd5353;
+  --color-link: #74abe2;
+
+  --color-code-background: #282c34;
+  --color-inline-code-background: rgba(222, 220, 209, 0.08);
+  --color-inline-code-text: #e06c75;
+
+  --color-hover: #3d3d3a;
+  --color-active: #4d4c48;
+  --color-frame-border: rgba(222, 220, 209, 0.15);
+  --color-group-background: #262624;
+
+  --color-reference: #4d4c48;
+  --color-reference-text: #faf9f5;
+  --color-reference-background: #1f1e1d;
+
+  --color-list-item: rgba(255, 255, 255, 0.06);
+  --color-list-item-hover: rgba(255, 255, 255, 0.04);
+
+  --modal-background: #262624;
+
+  --color-highlight: rgba(255, 255, 255, 0.95);
+  --color-background-highlight: rgba(217, 119, 87, 0.35);
+  --color-background-highlight-accent: rgba(116, 171, 226, 0.3);
+
+  --navbar-background-mac: rgba(38, 38, 36, 0.65);
+  --navbar-background: #262624;
+
+  --chat-background: transparent;
+  --chat-background-user: rgba(255, 255, 255, 0.09);
+  --chat-background-assistant: transparent;
+  --chat-text-user: #141413;
+
+  --color-status-success: #459315;
+  --color-status-error: var(--color-error);
+  --color-status-warning: #b17506;
+}
+
+body[theme-mode="dark"] #content-container {
+  background-color: var(--color-background) !important;
+}
+
+body[theme-mode="dark"] #content-container #messages {
+  background-color: var(--color-background);
+}
+
+body[theme-mode="dark"] .inputbar-container {
+  background-color: #1f1e1d;
+  border: 1px solid rgba(222, 220, 209, 0.14);
+  border-radius: 8px;
+}
+
+body[theme-mode="dark"] code {
+  background-color: var(--color-inline-code-background);
+  color: #abb2bf;
+}
+
+body[theme-mode="dark"] pre code {
+  color: #abb2bf;
+  background-color: #282c34;
+}
+
+/* 左侧导航栏会话列表（与 color.css 中 [navbar-position=left] 对齐） */
+body[navbar-position="left"][theme-mode="light"] {
+  --color-list-item: #f0eee6;
+  --color-list-item-hover: #f5f4ed;
+}
+
+body[navbar-position="left"][theme-mode="dark"] {
+  --color-list-item: #2c2c2a;
+  --color-list-item-hover: #262624;
+}
+
+/* 深度思考等折叠区内的 Markdown（文档示例） */
+.ant-collapse-content-box .markdown {
+  color: inherit;
+}
