@@ -7,6 +7,8 @@
  * 变量参考：https://github.com/CherryHQ/cherry-studio/blob/main/src/renderer/src/assets/styles/color.css
  *
  * 可选：取消下方「Anthropic 字体」注释块以使用 Claude 网页同款字体（需联网加载字体文件）。
+ *
+ * 行内代码字体：修改 :root 中的 --font-inline-code（及可选的 --font-block-code）。
  */
 
 /* 可选：取消注释以下 @font-face 与 :root 规则以使用 Anthropic Sans（与 Claude Official.css 同源，需联网加载） */
@@ -19,6 +21,11 @@
   font-display: swap;
 }
 :root {
+  /* 行内 Markdown 代码 `code` 的字体；可改为本机已安装的等宽字体名 */
+  --font-inline-code: ui-monospace, "Cascadia Code", "SF Mono", "Segoe UI Mono", Consolas, monospace;
+  /* 代码块 pre > code；默认与行内相同，需区分时可单独填写 */
+  --font-block-code: var(--font-inline-code);
+
   font-family: "Anthropic Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
 }
 
@@ -116,11 +123,13 @@ body[theme-mode="light"] .inputbar-container {
 body[theme-mode="light"] code {
   background-color: var(--color-inline-code-background);
   color: var(--color-inline-code-text);
+  font-family: var(--font-inline-code);
 }
 
 body[theme-mode="light"] pre code {
   color: #abb2bf;
   background-color: #282c34;
+  font-family: var(--font-block-code);
 }
 
 /* ========== 深色（Claude dark tokens + One Dark 代码块）========== */
@@ -215,11 +224,13 @@ body[theme-mode="dark"] .inputbar-container {
 body[theme-mode="dark"] code {
   background-color: var(--color-inline-code-background);
   color: #abb2bf;
+  font-family: var(--font-inline-code);
 }
 
 body[theme-mode="dark"] pre code {
   color: #abb2bf;
   background-color: #282c34;
+  font-family: var(--font-block-code);
 }
 
 /* 左侧导航栏会话列表（与 color.css 中 [navbar-position=left] 对齐） */
