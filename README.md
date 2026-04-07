@@ -6,9 +6,13 @@
 
 ## 预览
 
-| Cherry Studio（应用本主题） | Claude 官网（配色参考） |
-| :---: | :---: |
-| ![Cherry Studio 主题效果](./Cherry%20Studio截图.png) | ![Claude 官网](./Claude官网截图.png) |
+### Cherry Studio（应用本主题）
+
+![Cherry Studio 主题效果](./Cherry%20Studio截图.png)
+
+### Claude 官网（配色参考）
+
+![Claude 官网](./Claude官网截图.png)
 
 ## 特性
 
@@ -23,6 +27,7 @@
 2. 进入 **设置 → 个性化 → 自定义 CSS**（路径以当前版本为准，亦可参见 [官方文档](https://docs.cherry-ai.com/pre-basic/personalization-settings/css)）。
 3. 将本仓库中的 [`cherry-studio-claude-theme.css`](./cherry-studio-claude-theme.css) **全文**粘贴到自定义 CSS 编辑框并保存。
 4. 在应用内切换 **浅色 / 深色** 主题各检查一遍显示是否正常。
+5. 在 Cherry Studio 中, 显示设置-主题颜色-修改主题色为 #C69442.
 
 ### 可选字体
 
